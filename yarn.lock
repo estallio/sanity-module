@@ -2671,7 +2671,7 @@ __metadata:
     "@nuxtjs/eslint-config-typescript": 6.0.1
     "@nuxtjs/tailwindcss": 4.2.1
     "@release-it/conventional-changelog": 3.3.0
-    "@sanity/client": 2.19.0
+    "@sanity/client": 2.21.0
     "@types/fs-extra": 9.0.13
     "@types/jest": 27.0.2
     "@types/webpack-env": 1.16.2
@@ -2994,9 +2994,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sanity/client@npm:2.19.0":
-  version: 2.19.0
-  resolution: "@sanity/client@npm:2.19.0"
+"@sanity/client@npm:2.21.0":
+  version: 2.21.0
+  resolution: "@sanity/client@npm:2.21.0"
   dependencies:
     "@sanity/eventsource": 2.14.0
     "@sanity/generate-help-url": 2.18.0
@@ -3005,7 +3005,7 @@ __metadata:
     get-it: ^5.0.3
     make-error: ^1.3.0
     object-assign: ^4.1.1
-  checksum: f05be206b383b0e6e2780c299234489cd12544096d2cc43f5bbf5ae9e551cf6efe91095906ce06c70c7cfea56f79ed9944113aa76c4d3ebd0e32f3960450488e
+  checksum: 5af96d8753536031ab1732640219232b6303a6a216e42224cf6acc2faea527bf0d044a838e41f2bc30f03b032ffb09fd79e0650e5067a424dcbd748e98e4425b
   languageName: node
   linkType: hard
 
