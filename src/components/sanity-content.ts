@@ -204,28 +204,48 @@ function walkList (
 ) {
   const { length } = blocks
 
-  // Not a list item
+  // not a list item
   if (!block.level) {
     blocks.push(block)
     return blocks
   }
 
+  // get last "walked" block
   const { _type, children, level } = blocks[length - 1] || {}
-  if (_type === 'list' && children) {
-    if (level === block.level) {
-      children.push(block)
-    } else {
-      walkList(children, block)
-    }
-  } else {
+
+  // last block was not a list -> start a new one
+  if (_type !== "list" || !children) {
     blocks.push({
-      _type: 'list',
+      _type: "list",
       children: [block],
-      level: block.level,
-    } as List)
+      level: block.level
+    });
+
+    return blocks;
   }
 
-  return blocks
+  // last block was a list, but has higher level
+  if (level !== block.level) {
+    walkList(children, block);
+
+    return blocks;
+  }
+
+  // last block was a list and has different list styles -> also start a new one
+  if (children.length && children[0].listItem !== block.listItem) {
+    blocks.push({
+      _type: "list",
+      children: [block],
+      level: block.level
+    });
+
+    return blocks;
+  }
+
+  // last block was a list and has same list styles and level
+  children.push(block);
+
+  return blocks;
 }
 
 function renderBlocks (
